@@ -1,0 +1,434 @@
+<!doctype html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>Sample document</title>
+    <link rel="canonical" href="./regular-html-version.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <style amp-custom>
+      h1,h2,h3,h4,h5,h6,p,span{font-family:'Roboto Condensed',sans-serif;font-size:10px;font-weight:400;margin:0;padding:0}
+      html{margin:0;padding:0;outline:none;text-decoration:none;font-family:'Roboto Condensed',sans-serif;box-sizing:border-box}
+      input,section,button,select{outline:none}
+      a,button{cursor:pointer;pointer-events:all;text-decoration:none;color:#000}
+      button{border:none;border-radius:7px;background:#fff}
+      .scrollbar{margin:7px;float:left;height:97%;width:98%;background:#fff;overflow-y:scroll;position:relative;z-index:1}
+      .force-overflow{min-height:100px;line-height:1.5;font-size:12px}
+      #style-3-scrollbar::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.15);background-color:#fff}
+      #style-3-scrollbar::-webkit-scrollbar{width:6px;background-color:#fff}
+      #style-3-scrollbar::-webkit-scrollbar-thumb{background-color:silver}
+      .header{height:126px;background-color:#f2f2f2}
+      .gestorMailingLineActionsWrapper{position:relative;display:flex;align-items:center;justify-content:flex-start;width:70px;height:30px;margin:5px 60px;padding:5px;border-radius:7px}
+      .checkIcon{width:20px;height:20px;margin-right:5px;cursor:pointer}
+      .gestorMailingLineActionsWrapper span{font-size:14px;font-family:'Roboto',sans-serif;font-weight:500;color:#26547c;cursor:pointer}
+      .gestorMailingLineActionsWrapper:hover{background-color:silver}
+      .gestorMailingDropdownActionsWrapper{position:absolute;display:none;z-index:200;box-shadow:0 20px 50px 10px rgba(0,0,0,0.10);background-color:#fff;border-radius:7px;left:60px;padding:20px}
+      .gestorMailingDropdownList{position:relative;display:flex;flex-direction:column;flex-wrap:nowrap;list-style-type:none;padding:0;margin:0}
+      .gestorMailingDropdownList li{position:relative;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;list-style-position:outside}
+      .gestorMailingDropdownList li button{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;transition:.5s ease all;padding:5px 10px;margin:5px 0}
+      .gestorMailingDropdownList li button:hover{background-color:silver}
+      .gestorMailingDropdownList li span{font-family:'Roboto',sans-serif;font-size:14px;margin-left:5px;font-weight:500;color:#26547c}
+      #duplicateIcon,#exportIcon,#TrashIcon{width:30px;height:30px}
+      .gestorMailingContainer{position:relative;display:grid;grid-template-columns:1fr;grid-template-rows:470px;margin:0 40px;justify-content:center}
+      .WhiteOnWhite{box-shadow:0 20px 30px 0 rgba(0,0,0,0.10);border-radius:8px}
+      .ListarWrapper{position:relative}
+      .tabs{position:relative;height:450px;clear:both;margin:15px 0 0}
+      .tab{float:left}
+      .tab label{background:#eee;padding:10px 6.5px;border:1px solid #ccc;margin-left:-1px;position:relative;left:1px;border-radius:5px 5px 0 0;cursor:pointer}
+      .tab label span{font-size:18px;margin:0 10px;font-weight:500;color:#26547c}
+      .tab [type=radio]{display:none}
+      .content{position:absolute;top:28px;left:0;background:#fff;right:0;bottom:0;padding:6px;border:1px solid #ccc;border:none;border-top:.5px solid #ccc}
+      [type=radio]:checked ~ label{background:#fff;border-bottom:1px solid #fff;z-index:2}
+      [type=radio]:checked ~ label ~ .content{z-index:1}
+      .tabsPlus{position:absolute;right:0;top:-10px;width:30px;height:50px;box-sizing:border-box;border:.5px solid #ccc}
+      #TabsPlusIcon{position:relative;bottom:7px}
+      .tagClienteWrapper{position:fixed;z-index:50;bottom:0;display:block;right:50%;transform:translateX(50%);padding:10px 30px;background-color:#26547c;color:#fff;border-radius:7px 7px 0 0}
+      .tagCreditosWrapper{position:fixed;z-index:50;bottom:0;display:block;right:50%;transform:translateX(50%);padding:10px 30px;background-color:#26547c;color:#fff;border-radius:7px 7px 0 0}
+      .coinBtn{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;padding:10px 15px;margin:10px;box-shadow:0 0 30px 0 rgba(0,0,0,0.40);background-color:#1f8a70;color:#fff;font-weight:600;transition:.5s ease all}
+      .coinBtn:hover{box-shadow:0 10px 40px 0 rgba(0,0,0,0.20);background-color:#26547c}
+      #coinsSvg{width:30px}
+      .coinBtn span{font-size:14px;margin-left:10px;font-family:'Roboto',sans-serif}
+      table{border-spacing:0;width:99%;border:1px solid #ddd}
+      th{cursor:pointer;vertical-align:middle;color:#26547c}
+      th span{display:inline-flex;font-size:12px;font-weight:600;margin-right:5px}
+      .sortSvg{width:15px;position:absolute;display:inline-flex}
+      .sortSvgPath{fill:#eee2df}
+      th,td{text-align:left;padding:12px;border-bottom:1px solid silver;transition:.5s all ease}
+      td{white-space:pre-wrap;word-wrap:break-word}
+      tr:nth-child(even){background-color:#f2f2f2}
+      tr:hover,tr:nth-child(even):hover{background-color:#eee2df}
+      #noHover:hover{background-color:#fff}
+      .lineDiv{width:99%;border-bottom:2px solid #26547c;position:absolute;top:45px}
+      td:nth-child(1){position:relative;width:22px}
+      td:nth-child(2){position:relative;width:180px}
+      td:nth-child(3){position:relative;width:140px}
+      td:nth-child(4){position:relative;width:90px}
+      td:nth-child(5){position:relative;width:50px}
+      td:nth-child(6){position:relative;width:50px}
+      td:nth-child(7){position:relative;width:50px;white-space:pre-wrap;word-wrap:break-word}
+      td:nth-child(8){position:relative;width:50px;white-space:pre-wrap;word-wrap:break-word}
+      .sim{position:relative;border:.5px dashed #1f8a70;border-radius:4px;padding:5px 15px;font-size:12px;color:#1f8a70}
+      .nao{position:relative;border:.5px dashed #f95b4d;border-radius:4px;padding:5px 13px;font-size:12px;color:#f95b4d}
+      .deleteConfirmContainer{z-index:100;position:absolute;display:none;flex-direction:column;justify-content:center;align-items:center;width:100%;height:100%;top:0;right:0}
+      .deleteConfirmGrid{position:relative;display:flex;width:300px;flex-direction:column;flex-wrap:nowrap;justify-content:center;align-items:center;background-color:#fff;padding:20px;border-radius:7px;box-shadow:0 20px 50px 10px rgba(0,0,0,0.20)}
+      .deleteConfirmGrid span{font-size:14px;text-align:center;line-height:1.5}
+      .deleteConfirmGrid button{padding:10px;box-shadow:0 10px 30px 10px rgba(0,0,0,0.10);background-color:#233656;color:#fff}
+      .inputDeletar{padding:10px;width:120px;margin:10px;outline:none;box-shadow:0 10px 30px 10px rgba(0,0,0,0.10);border-radius:7px;border:none}
+      .duplicateContainer{z-index:100;position:absolute;display:none;flex-direction:column;justify-content:center;align-items:center;top:0;right:0;width:100%;height:100%}
+      .duplicateConfirmWrapper{position:relative;display:flex;width:500px;flex-direction:column;flex-wrap:nowrap;justify-content:center;align-items:center;background-color:#fff;padding:20px;border-radius:7px;box-shadow:0 10px 30px 10px rgba(0,0,0,0.20)}
+      .duplicateConfirmWrapper span{font-size:14px;text-align:center;line-height:1.5}
+      .duplicateConfirmWrapper button{padding:10px;box-shadow:0 10px 30px 10px rgba(0,0,0,0.10);background-color:#233656;color:#fff}
+      .inputDuplicar{padding:10px;width:400px;margin:10px;outline:none;box-shadow:0 10px 30px 10px rgba(0,0,0,0.10);border-radius:7px;border:none}
+      .tooltip-gestorMailing{position:relative;text-align:center;z-index:100}
+      .tooltip-gestorMailing::before,.tooltip-gestorMailing::after{position:absolute;left:50%;opacity:0;visibility:hidden;transition:.1s ease-out}
+      .tooltip-gestorMailing::before{content:"";border-width:0 8px 10px;border-style:solid;margin-left:-8px;top:40px;border-color:transparent transparent #415b76}
+      .tooltip-gestorMailing::after{content:attr(data-tooltip-gestorMailing);background:#415b76;border-radius:4px;color:#fff;top:50px;width:87px;padding:5px;left:-12px}
+      .tooltip-gestorMailing:hover::before,.tooltip-gestorMailing:hover::after{transition:.1s ease-out;transform:translateY(-20px);opacity:1;visibility:visible}
+      .tooltip-gestorMailing:active::before,.tooltip-gestorMailing:active::after{opacity:0;visibility:hidden}      
+    </style>
+
+
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <!-- <link rel="stylesheet" href="css/gestorMailing.css"> -->
+
+        <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+  </head>
+
+
+  <body>
+
+<!-- header space -->
+<div class="header"></div>
+<!-- header space -->
+
+<div class="tagClienteWrapper">
+  <div>NOME DO CLIENTE</div>
+</div>
+
+
+<div class="gestorMailingLineActionsWrapper">
+  <div class="checkIcon">
+    <svg id="gestorMailingCheckIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path fill="#eee2df" d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z"/>
+    </svg>
+  </div>
+  <span>Ações</span>
+</div>
+
+<div class="gestorMailingDropdownActionsWrapper">
+  <ul class="gestorMailingDropdownList">
+    <li>
+      <button id="gestorMailingDuplicarBtn" class="gestorMailingBtns" onclick="fecharModal()">
+        <svg id="duplicateIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 27 27" xml:space="preserve">
+          <path fill="#eee2df" d="M24.5,0H7.6C6.2,0,5.1,1.1,5.1,2.5v2.5H2.5C1.1,5.1,0,6.2,0,7.6v16.9C0,25.9,1.1,27,2.5,27h16.9c1.4,0,2.5-1.1,2.5-2.5v-2.5h2.5c1.4,0,2.5-1.1,2.5-2.5V2.5C27,1.1,25.9,0,24.5,0z M20.3,24.5c0,0.5-0.4,0.8-0.8,0.8H2.5c-0.5,0-0.8-0.4-0.8-0.8V7.6c0-0.5,0.4-0.8,0.8-0.8h2.5v12.7c0,1.4,1.1,2.5,2.5,2.5h12.7V24.5z M25.3,19.4c0,0.5-0.4,0.8-0.8,0.8H7.6c-0.5,0-0.8-0.4-0.8-0.8V2.5c0-0.5,0.4-0.8,0.8-0.8h16.9c0.5,0,0.8,0.4,0.8,0.8V19.4z"/>
+          <path fill="#eee2df" d="M21.4,10.2h-4.6V5.4c0-0.1-0.1-0.2-0.2-0.2h-0.9c-0.1,0-0.2,0.1-0.2,0.2v4.8h-4.6c-0.1,0-0.2,0.1-0.2,0.2v1c0,0.1,0.1,0.2,0.2,0.2h4.6v4.8c0,0.1,0.1,0.2,0.2,0.2h0.9c0.1,0,0.2-0.1,0.2-0.2v-4.8h4.6c0.1,0,0.2-0.1,0.2-0.2v-1C21.6,10.3,21.5,10.2,21.4,10.2z"/>
+        </svg>
+        <span>Duplicar Mailing</span>
+      </button>
+    </li>
+    <li>
+      <button id="gestorMailingFavoritarBtn" class="gestorMailingBtns" onclick="fecharModal()">
+        <svg id="exportIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30.4 27" xml:space="preserve">
+          <path fill="#eee2df" d="M29.9,8.9l-8.4-8.4c-1.1-1.1-2.9-0.3-2.9,1.2v3.8C11.1,5.7,4.6,7.6,4.6,15.1c0,4.5,2.6,7.1,4.2,8.2c1.3,0.9,3.1-0.3,2.6-1.8c-1.5-5.4,0.4-6.5,7.1-6.7v3.8c0,1.5,1.8,2.2,2.9,1.2l8.4-8.4C30.5,10.7,30.5,9.6,29.9,8.9L29.9,8.9zM20.2,18.6v-5.5c-7.5,0-12.7,0.8-10.4,8.9c-1.7-1.2-3.5-3.4-3.5-6.8c0-7.1,6.9-7.9,13.9-7.9V1.7l8.4,8.4L20.2,18.6z M22.2,21.3c0.1-0.1,0.2-0.2,0.4-0.3c0.4-0.4,1.1-0.1,1.1,0.5v3c0,1.4-1.1,2.5-2.5,2.5H2.5C1.1,27,0,25.9,0,24.5V5.9c0-1.4,1.1-2.5,2.5-2.5h9.1c0.3,0,0.6,0.3,0.6,0.6c0,0.3-0.2,0.5-0.5,0.6c-0.5,0.1-1,0.3-1.4,0.4c-0.1,0-0.1,0-0.2,0H2.5c-0.5,0-0.8,0.4-0.8,0.8v18.6c0,0.5,0.4,0.8,0.8,0.8h18.6c0.5,0,0.8-0.4,0.8-0.8v-2.6C21.9,21.6,22,21.4,22.2,21.3L22.2,21.3z"/>
+        </svg>
+        <span>Exportar Mailing</span>
+      </button>
+    </li>
+    <li>
+      <button id="gestorMailingDeletarBtn" class="gestorMailingBtns" onclick="fecharModal()">
+        <svg id="TrashIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 23.6 27" xml:space="preserve">
+          <path fill="#eee2df" d="M17.7,3.4L15.9,1c-0.5-0.6-1.2-1-2-1H9.7c-0.8,0-1.5,0.4-2,1L5.9,3.4H1.3C0.6,3.4,0,3.9,0,4.6v0.1c0,0.2,0.1,0.3,0.3,0.3h1.4v19.4c0,1.4,1.1,2.5,2.5,2.5h15.2c1.4,0,2.5-1.1,2.5-2.5V5.1h1.4c0.2,0,0.3-0.1,0.3-0.3V4.6c0-0.7-0.6-1.3-1.3-1.3H17.7z M9.7,1.7h4.2c0.3,0,0.5,0.1,0.7,0.3l1,1.3H8L9,2C9.2,1.8,9.4,1.7,9.7,1.7z M20.3,24.5c0,0.5-0.4,0.8-0.8,0.8H4.2c-0.5,0-0.8-0.4-0.8-0.8V5.1h16.9V24.5z M11,22.1V8.2c0-0.3,0.3-0.6,0.6-0.6H12c0.3,0,0.6,0.3,0.6,0.6v13.9c0,0.3-0.3,0.6-0.6,0.6h-0.4C11.3,22.8,11,22.5,11,22.1z M6.8,22.1V8.2c0-0.3,0.3-0.6,0.6-0.6h0.4c0.3,0,0.6,0.3,0.6,0.6v13.9c0,0.3-0.3,0.6-0.6,0.6H7.4C7,22.8,6.8,22.5,6.8,22.1z M15.2,22.1V8.2c0-0.3,0.3-0.6,0.6-0.6h0.4c0.3,0,0.6,0.3,0.6,0.6v13.9c0,0.3-0.3,0.6-0.6,0.6h-0.4C15.5,22.8,15.2,22.5,15.2,22.1z"/>
+        </svg>
+        <span>Excluir Mailing</span>
+      </button>
+    </li>
+  </ul>
+</div>
+
+<!-- editor mailing -->
+<div class="gestorMailingContainer">
+
+
+
+<!-- janela 3: abas do mailing -->
+  <div class="AbasWrapper WhiteOnWhite">
+
+    <!-- abas -->
+    <div class="tabs">
+    
+   <div class="tab">
+       <input type="radio" id="tab-1" name="tab-group-1" checked>
+
+       <label for="tab-1">
+        <span>Gerenciamento de Mailings</span>
+      </label>
+       
+       <div class="content">
+           <!-- conteudo abas -->
+      <div class="lista-filtros scrollbar" id="style-3-scrollbar">
+        <div class="force-overflow">
+<table id="myTable">
+  <tr id="noHover" class="TableHeader">
+   <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
+    <th><input type="checkbox" class="tooltip-gestorMailing" data-tooltip-gestorMailing="Selecionar todos"></th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(1)" class="gestorMailingtableHeader">
+      <span>Nome do Mailing</span>
+      <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+      </svg>
+    </th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(2)" class="gestorMailingtableHeader"><span>Assessor</span>
+          <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+        </svg>
+    </th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(3)" class="gestorMailingtableHeader"><span>Criado em</span>
+          <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+        </svg>
+      </th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(4)" class="gestorMailingtableHeader"><span>Atualizado</span>
+      <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+      </svg>
+    </th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(5)" class="gestorMailingtableHeader"><span>Contatos</span>
+        <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+      </svg>
+    </th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(5)" class="gestorMailingtableHeader"><span>Bloqueados</span>
+        <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+      </svg>
+    </th>
+    <th onmouseover="sortHov(this)" onmouseout="sortHovOut(this)" onclick="sortTable(5)" class="gestorMailingtableHeader"><span>Utilizado</span>
+        <svg class="sortSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path class="sortSvgPath" d="M204.485 392l-84 84.485c-4.686 4.686-12.284 4.686-16.971 0l-84-84.485c-4.686-4.686-4.686-12.284 0-16.97l7.07-7.071c4.686-4.686 12.284-4.686 16.971 0L95 419.887V44c0-6.627 5.373-12 12-12h10c6.627 0 12 5.373 12 12v375.887l51.444-51.928c4.686-4.686 12.284-4.686 16.971 0l7.07 7.071c4.687 4.686 4.687 12.284 0 16.97zm100.492-220.355h61.547l15.5 44.317A12 12 0 0 0 393.351 224h11.552c8.31 0 14.105-8.243 11.291-16.062l-60.441-168A11.999 11.999 0 0 0 344.462 32h-16.924a11.999 11.999 0 0 0-11.291 7.938l-60.441 168c-2.813 7.82 2.981 16.062 11.291 16.062h11.271c5.12 0 9.676-3.248 11.344-8.088l15.265-44.267zm10.178-31.067l18.071-51.243c.853-2.56 1.776-5.626 2.668-8.743.871 3.134 1.781 6.219 2.644 8.806l17.821 51.18h-41.204zm-3.482 307.342c4.795-6.044-1.179 2.326 92.917-133.561a12.011 12.011 0 0 0 2.136-6.835V300c0-6.627-5.373-12-12-12h-113.84c-6.627 0-12 5.373-12 12v8.068c0 6.644 5.393 12.031 12.037 12.031 81.861.001 76.238.011 78.238-.026-2.973 3.818 4.564-7.109-92.776 133.303a12.022 12.022 0 0 0-2.142 6.847V468c0 6.627 5.373 12 12 12h119.514c6.627 0 12-5.373 12-12v-8.099c0-6.627-5.373-12-12-12-87.527-.001-81.97-.01-84.084.019z"/>
+      </svg>
+    </th>
+  </tr>
+  <div class="lineDiv"></div>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Revista Exame</td>
+    <td>Alfredo Marcondes</td>
+    <td>12/12/2019 às 12h</td>
+    <td>sim</td>
+    <td>3000</td>
+    <td>200</td>
+    <td><span class="sim">SIM</span></td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Folha de S.Paulo</td>
+    <td>Renato Jakitas</td>
+    <td>12/12/2019 às 12h</td>
+    <td>sim</td>
+    <td>3000</td>
+    <td>200</td>
+    <td><span class="nao">NÃO</span></td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Revista Istoé</td>
+    <td>José Roberto Caetano</td>
+    <td>12/12/2019 às 12h</td>
+    <td>não</td>
+    <td>3000</td>
+    <td>200</td>
+    <td><span class="nao">NÃO</span></td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Revista Veja</td>
+    <td>Carlos Eduardo Sambrana</td>
+    <td>12/12/2019 às 12h</td>
+    <td>não</td>
+    <td>3000</td>
+    <td>200</td>
+    <td><span class="sim">SIM</span></td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Portal Exame</td>
+    <td>Cláudio Gradilone</td>
+    <td>12/12/2019 às 12h</td>
+    <td>não</td>
+    <td>3000</td>
+    <td>200</td>
+    <td><span class="sim">SIM</span></td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Rádio Jovem Pan São Paulo</td>
+    <td>Denise Neumann</td>
+    <td>12/12/2019 às 12h</td>
+    <td>não</td>
+    <td>3000</td>
+    <td>200</td>
+    <td><span class="sim">SIM</span></td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>O Estado de S.Paulo (Estadão):Economia e Negócios</td>
+    <td>Klester Cavalcante</td>
+    <td>12/12/2019 às 12h</td>
+    <td>não</td>
+    <td>3000</td>
+    <td>200</td>
+    <td><span class="sim">SIM</span></td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Rádio 93 FM Adamantina</td>
+    <td>André Cardozo</td>
+    <td>12/12/2019 às 12h</td>
+    <td>não</td>
+    <td>3000</td>
+    <td>200</td>
+    <td><span class="sim">SIM</span></td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Revista Gestão Cooperativa (Brasília)</td>
+    <td>Mariana Desiderio</td>
+    <td>12/12/2019 às 12h</td>
+    <td>não</td>
+    <td>3000</td>
+    <td>200</td>
+    <td><span class="sim">SIM</span></td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Revista Agromais</td>
+    <td>Lígia Tuon</td>
+    <td>12/12/2019 às 12h</td>
+    <td>não</td>
+    <td>3000</td>
+    <td>200</td>
+    <td><span class="nao">NÃO</span></td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Informe Agropecuário</td>
+    <td>João Pedro Caleiro</td>
+    <td>12/12/2019 às 12h</td>
+    <td>não</td>
+    <td>3000</td>
+    <td>200</td>
+    <td><span class="nao">NÃO</span></td>
+  </tr>
+</table>
+
+        </div>
+      </div>
+      <!-- conteudo abas -->
+       </div> 
+   </div>
+    
+
+<!--    <div class="tab countAbas2">
+       <input type="radio" id="tab-2" name="tab-group-1">
+       <label for="tab-2">
+        <span>Favoritos</span>
+      </label>
+       
+       <div class="content">
+           stuff aba2
+       </div> 
+   </div>
+    
+
+   <div class="tab countAbas4">
+       <input type="radio" id="tab-4" name="tab-group-1">
+       <label for="tab-4">
+        <span>Bloqueados</span>
+      </label>
+       
+       <div class="content">
+           stuff aba4
+       </div> 
+   </div>
+    
+
+    <div class="tab countAbas5">
+       <input type="radio" id="tab-5" name="tab-group-1">
+       <label for="tab-5">
+        <span>Target</span>
+      </label>
+     
+       <div class="content">
+           stuff aba5
+       </div> 
+   </div>
+
+
+    <div class="tab countAbas6">
+       <input type="radio" id="tab-6" name="tab-group-1">
+       <label for="tab-6">
+        <span>Influencers</span>
+      </label>
+     
+       <div class="content">
+           stuff aba6
+       </div> 
+   </div>
+
+
+    <div class="tab countAbas8">
+       <input type="radio" id="tab-8" name="tab-group-1">
+       <label for="tab-8">
+        <span>Correspondentes Internacionais</span>
+      </label>
+     
+       <div class="content">
+           stuff aba8
+       </div> 
+   </div> -->
+
+  
+</div>
+
+</div>
+
+
+  <div class="deleteConfirmContainer">
+    <div class="deleteConfirmGrid">
+      <svg id="trashIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path fill="#eee2df" d="M336 64l-33.6-44.8C293.3 7.1 279.1 0 264 0h-80c-15.1 0-29.3 7.1-38.4 19.2L112 64H24C10.7 64 0 74.7 0 88v2c0 3.3 2.7 6 6 6h26v368c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V96h26c3.3 0 6-2.7 6-6v-2c0-13.3-10.7-24-24-24h-88zM184 32h80c5 0 9.8 2.4 12.8 6.4L296 64H152l19.2-25.6c3-4 7.8-6.4 12.8-6.4zm200 432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V96h320v368zm-176-44V156c0-6.6 5.4-12 12-12h8c6.6 0 12 5.4 12 12v264c0 6.6-5.4 12-12 12h-8c-6.6 0-12-5.4-12-12zm-80 0V156c0-6.6 5.4-12 12-12h8c6.6 0 12 5.4 12 12v264c0 6.6-5.4 12-12 12h-8c-6.6 0-12-5.4-12-12zm160 0V156c0-6.6 5.4-12 12-12h8c6.6 0 12 5.4 12 12v264c0 6.6-5.4 12-12 12h-8c-6.6 0-12-5.4-12-12z"/>
+      </svg>
+      <span>Deseja realmente deletar? </br>Digite "DELETAR" (em caixa alta) e clique em "OK" para confirmar.
+      </span>
+      <input class="inputDeletar" type="text" placeholder="Digite DELETAR">
+      <button class="BtnOk">OK</button>
+    </div>
+  </div>
+
+
+<div class="duplicateContainer">
+  <div class="duplicateConfirmWrapper">
+    <span>Digite o nome do mailing duplicado e clique em Ok para confirmar:</span>
+    <input class="inputDuplicar" type="text" placeholder="Nome do mailing">
+    <button class="duplicarBtn">OK</button>
+  </div>
+</div>
+  </div>
+
+</div>
+<!-- final editor mailing -->
+
+
+
+
+
+
+
+
+    <script src="js/gestorMailing.js"></script>
+  </body>
+</html>
